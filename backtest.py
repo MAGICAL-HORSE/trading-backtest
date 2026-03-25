@@ -62,7 +62,9 @@ def generate_ohlcv(ticker: str, params: dict, period_days: int = 180) -> pd.Data
     Intraday volatility is amplified 1.6× in the first and last 30 minutes
     of the session to mimic the open/close auction microstructure.
     """
-    np.random.seed(params["seed"])
+    # Isolated RNG per ticker — prevents ticker-order from affecting each
+    # ticker's random path (global np.random.seed would reset shared state)
+    rng = np.random.default_rng(params["seed"])
 
     S0     = params["S0"]
     sigma  = params["vol"]
@@ -95,14 +97,14 @@ def generate_ohlcv(ticker: str, params: dict, period_days: int = 180) -> pd.Data
             # Higher vol at market open and close
             vol_scale = 1.6 if (mins_since_open < 30 or mins_to_close < 30) else 1.0
 
-            ret       = per_bar_drift + per_bar_vol * vol_scale * np.random.randn()
+            ret       = per_bar_drift + per_bar_vol * vol_scale * rng.standard_normal()
             new_price = max(price * math.exp(ret), 0.01)
 
             bar_open  = price
             intra_std = per_bar_vol * vol_scale * price
-            bar_high  = max(bar_open, new_price) + abs(np.random.randn()) * intra_std * 0.5
-            bar_low   = min(bar_open, new_price) - abs(np.random.randn()) * intra_std * 0.5
-            bar_vol   = int(np.random.lognormal(mean=12, sigma=0.5))
+            bar_high  = max(bar_open, new_price) + abs(rng.standard_normal()) * intra_std * 0.5
+            bar_low   = min(bar_open, new_price) - abs(rng.standard_normal()) * intra_std * 0.5
+            bar_vol   = int(rng.lognormal(mean=12, sigma=0.5))
 
             rows.append({
                 "Open":   round(bar_open,  2),
