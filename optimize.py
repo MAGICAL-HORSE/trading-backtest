@@ -37,12 +37,34 @@ INITIAL_CAP  = 300.0
 TARGET_RETURN = 95.0   # % — what the user asked for
 
 BASE_PARAMS = {
-    "SPY":  {"S0": 572.0, "vol": 0.14, "drift": 0.10},
-    "QQQ":  {"S0": 488.0, "vol": 0.18, "drift": 0.12},
-    "NVDA": {"S0": 124.0, "vol": 0.58, "drift": 0.15},
+    # ── Mega-cap tech ──────────────────────────────────────────────────
+    "SPY":  {"S0": 572.0, "vol": 0.14, "drift": 0.10},   # S&P 500 ETF
+    "QQQ":  {"S0": 488.0, "vol": 0.18, "drift": 0.12},   # Nasdaq-100 ETF
+    "IWM":  {"S0": 208.0, "vol": 0.19, "drift": 0.09},   # Russell 2000 ETF
+    "AAPL": {"S0": 227.0, "vol": 0.26, "drift": 0.12},   # Apple
+    "MSFT": {"S0": 415.0, "vol": 0.25, "drift": 0.13},   # Microsoft
+    "AMZN": {"S0": 213.0, "vol": 0.30, "drift": 0.14},   # Amazon
+    "META": {"S0": 592.0, "vol": 0.33, "drift": 0.16},   # Meta
+    "GOOGL":{"S0": 175.0, "vol": 0.28, "drift": 0.13},   # Alphabet
+    # ── High-vol single names ──────────────────────────────────────────
+    "NVDA": {"S0": 124.0, "vol": 0.58, "drift": 0.15},   # Nvidia
+    "TSLA": {"S0": 285.0, "vol": 0.62, "drift": 0.10},   # Tesla
+    "AMD":  {"S0": 118.0, "vol": 0.52, "drift": 0.12},   # AMD
+    "PLTR": {"S0":  88.0, "vol": 0.68, "drift": 0.20},   # Palantir
+    "MSTR": {"S0": 345.0, "vol": 0.90, "drift": 0.25},   # MicroStrategy (BTC proxy)
+    "COIN": {"S0": 205.0, "vol": 0.75, "drift": 0.18},   # Coinbase
+    "SMCI": {"S0":  48.0, "vol": 0.80, "drift": 0.12},   # Super Micro
+    "RIVN": {"S0":  14.0, "vol": 0.85, "drift": -0.05},  # Rivian (distressed)
+    # ── Macro / rates / commodities ───────────────────────────────────
+    "GLD":  {"S0": 235.0, "vol": 0.13, "drift": 0.06},   # Gold ETF
+    "TLT":  {"S0":  88.0, "vol": 0.15, "drift": -0.03},  # 20yr Treasury ETF
+    "XLE":  {"S0":  90.0, "vol": 0.22, "drift": 0.08},   # Energy ETF
 }
-IS_SEEDS  = {"SPY": 42,  "QQQ": 77,  "NVDA": 13}   # in-sample
-OOS_SEEDS = {"SPY": 99,  "QQQ": 200, "NVDA": 301}  # out-of-sample (different random paths)
+
+# Deterministic seeds: IS uses one random universe, OOS uses a completely
+# different one — same parameters, different market path.
+IS_SEEDS  = {t: (i * 37 + 42)       for i, t in enumerate(BASE_PARAMS)}
+OOS_SEEDS = {t: (i * 37 + 42 + 999) for i, t in enumerate(BASE_PARAMS)}
 
 
 # ─────────────────────────────────────────────────────────────
@@ -306,19 +328,51 @@ def run_fast(arrs: dict, sigmas: dict, cfg: Cfg) -> tuple:
 # ─────────────────────────────────────────────────────────────
 
 GRID = {
-    "ema_fast":   [5, 9, 12],
-    "ema_slow":   [15, 20, 26, 30],
-    "width":      [1.0, 2.0, 3.0, 5.0],
-    "max_cost":   [20.0, 30.0, 50.0],
-    "tp":         [0.60, 0.70, 0.80, 0.90],
-    "sl":         [0.30, 0.40, 0.50, 0.60],
-    "entry_secs": [9*3600+45*60, 10*3600, 10*3600+30*60],
-    "exit_secs":  [14*3600+30*60, 15*3600, 15*3600+30*60],
+    # Reduced non-ticker dimensions (informed by previous sweep's best configs)
+    "ema_fast":   [5, 9],
+    "ema_slow":   [20, 26],
+    "width":      [1.0, 2.0, 5.0],
+    "max_cost":   [30.0, 50.0],
+    "tp":         [0.60, 0.80],
+    "sl":         [0.40, 0.50],
+    "entry_secs": [10*3600],                  # 10:00 AM — best from prior sweep
+    "exit_secs":  [14*3600+30*60, 15*3600+30*60],
     "max_dt_week":[3],
-    "tickers":    [
-        ("NVDA",),
-        ("SPY", "QQQ", "NVDA"),
-        ("QQQ", "NVDA"),
+    "tickers": [
+        # ── Single ultra-high-vol names ────────────────────────────────
+        ("MSTR",),                      # MicroStrategy: 90% vol BTC proxy
+        ("RIVN",),                      # Rivian: 85% vol distressed EV
+        ("SMCI",),                      # Super Micro: 80% vol AI server
+        ("COIN",),                      # Coinbase: 75% vol crypto
+        ("PLTR",),                      # Palantir: 68% vol AI/defense
+        ("TSLA",),                      # Tesla: 62% vol
+        ("NVDA",),                      # Nvidia: 58% vol
+        ("AMD",),                       # AMD: 52% vol
+        # ── High-vol pairs ─────────────────────────────────────────────
+        ("NVDA", "TSLA"),
+        ("MSTR", "COIN"),               # crypto pair
+        ("PLTR", "SMCI"),               # AI pair
+        ("TSLA", "RIVN"),               # EV pair
+        ("NVDA", "AMD"),                # chip pair
+        # ── Vol-tier trios ─────────────────────────────────────────────
+        ("NVDA", "TSLA", "MSTR"),       # ultra-high-vol trio
+        ("PLTR", "COIN", "SMCI"),       # mid/high-vol trio
+        ("AMD",  "TSLA", "NVDA"),
+        # ── Mixed: one anchor + high-vol ──────────────────────────────
+        ("SPY",  "NVDA"),
+        ("QQQ",  "TSLA"),
+        ("QQQ",  "MSTR"),
+        ("IWM",  "PLTR"),
+        # ── Original combos (baseline) ────────────────────────────────
+        ("QQQ",  "NVDA"),
+        ("SPY",  "QQQ",  "NVDA"),
+        # ── Diversified baskets ────────────────────────────────────────
+        ("NVDA", "TSLA", "PLTR", "COIN"),
+        ("MSTR", "RIVN", "SMCI", "COIN"),
+        # ── Macro / low-vol (control group) ───────────────────────────
+        ("GLD",),                       # Gold: 13% vol  — should be weakest
+        ("TLT",),                       # Treasuries: 15% vol — also weak
+        ("SPY",),                       # S&P 500: 14% vol — baseline
     ],
 }
 
@@ -485,6 +539,31 @@ if __name__ == "__main__":
     print(f"  Avg IS return:  {avg_is:+.1f}%")
     print(f"  Avg OOS return: {avg_oos:+.1f}%")
     print(f"  Return degradation IS→OOS: {degradation:.0f}%")
+
+    # ── Vol-tier breakdown: best IS & OOS per ticker group ─────
+    print(f"\n{sep}")
+    print("  BEST RESULT PER TICKER  (best IS config for each underlying)")
+    print(f"  {'Ticker(s)':<24} {'Vol':<8} {'Best IS':>9} {'Its OOS':>9}  Verdict")
+    print("  " + "─"*62)
+    VOL_MAP = {t: p["vol"] for t, p in BASE_PARAMS.items()}
+
+    seen = set()
+    for _, r in df.iterrows():
+        tkrs = r["tickers"]
+        if tkrs in seen:
+            continue
+        seen.add(tkrs)
+        # avg vol of the combo
+        tvols = [VOL_MAP[t] for t in tkrs.split(",") if t in VOL_MAP]
+        avg_v = sum(tvols) / len(tvols) if tvols else 0
+        # find OOS for this ticker combo
+        oos_match = oos_df[oos_df["tickers"] == tkrs]
+        oos_r = oos_match.iloc[0]["OOS_ret_%"] if len(oos_match) else None
+        oos_s = f"{oos_r:+.1f}%" if oos_r is not None else "  n/a "
+        verdict = ("✓ survived" if oos_r is not None and oos_r > 0
+                   else "✗ failed  " if oos_r is not None
+                   else "not tested")
+        print(f"  {tkrs:<24} {avg_v*100:>5.0f}%   {r['IS_ret_%']:>+8.1f}%  {oos_s:>8}  {verdict}")
 
     # ── Best config detail ─────────────────────────────────────
     best_row = df.iloc[0]
