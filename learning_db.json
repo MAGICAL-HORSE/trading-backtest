@@ -1,0 +1,2414 @@
+{
+  "weights": {
+    "liquidity_lock": 10.0,
+    "ownership_renounced": 10.0,
+    "wallet_concentration": 10.0,
+    "dangerous_functions": 10.0,
+    "dev_history": 10.0,
+    "contract_age": 10.0,
+    "social_authenticity": 10.0,
+    "volume_liq_ratio": 10.0
+  },
+  "min_score_threshold": 60.0,
+  "outcomes": [
+    {
+      "address": "0xSAFE0000",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.33,
+        "dangerous_functions": 6.67,
+        "dev_history": 10.0,
+        "contract_age": 10.0,
+        "social_authenticity": 9.59,
+        "volume_liq_ratio": 8.3
+      },
+      "timestamp": "2026-03-26T03:34:28.684209+00:00"
+    },
+    {
+      "address": "0xSAFE0001",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 6.54,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.57,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.15,
+        "contract_age": 9.9,
+        "social_authenticity": 9.62,
+        "volume_liq_ratio": 8.06
+      },
+      "timestamp": "2026-03-26T03:34:28.685201+00:00"
+    },
+    {
+      "address": "0xSAFE0002",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.53,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 8.24,
+        "dangerous_functions": 6.67,
+        "dev_history": 10.0,
+        "contract_age": 10.0,
+        "social_authenticity": 8.73,
+        "volume_liq_ratio": 9.01
+      },
+      "timestamp": "2026-03-26T03:34:28.685902+00:00"
+    },
+    {
+      "address": "0xSAFE0003",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.71,
+        "dangerous_functions": 10.0,
+        "dev_history": 7.05,
+        "contract_age": 10.0,
+        "social_authenticity": 9.45,
+        "volume_liq_ratio": 9.42
+      },
+      "timestamp": "2026-03-26T03:34:28.686645+00:00"
+    },
+    {
+      "address": "0xSAFE0004",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.79,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 8.34,
+        "dangerous_functions": 6.67,
+        "dev_history": 9.0,
+        "contract_age": 10.0,
+        "social_authenticity": 8.73,
+        "volume_liq_ratio": 8.34
+      },
+      "timestamp": "2026-03-26T03:34:28.687407+00:00"
+    },
+    {
+      "address": "0xSAFE0005",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.54,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 8.85,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.91,
+        "contract_age": 10.0,
+        "social_authenticity": 9.26,
+        "volume_liq_ratio": 7.25
+      },
+      "timestamp": "2026-03-26T03:34:28.688375+00:00"
+    },
+    {
+      "address": "0xSAFE0006",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.15,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.48,
+        "contract_age": 10.0,
+        "social_authenticity": 8.16,
+        "volume_liq_ratio": 9.29
+      },
+      "timestamp": "2026-03-26T03:34:28.688976+00:00"
+    },
+    {
+      "address": "0xSAFE0007",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 9.88,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 9.31,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.65,
+        "contract_age": 10.0,
+        "social_authenticity": 9.48,
+        "volume_liq_ratio": 8.47
+      },
+      "timestamp": "2026-03-26T03:34:28.690187+00:00"
+    },
+    {
+      "address": "0xSAFE0008",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 8.19,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.21,
+        "contract_age": 10.0,
+        "social_authenticity": 9.54,
+        "volume_liq_ratio": 7.57
+      },
+      "timestamp": "2026-03-26T03:34:28.692268+00:00"
+    },
+    {
+      "address": "0xSAFE0009",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 9.89,
+        "dangerous_functions": 6.67,
+        "dev_history": 10.0,
+        "contract_age": 10.0,
+        "social_authenticity": 10.0,
+        "volume_liq_ratio": 9.13
+      },
+      "timestamp": "2026-03-26T03:34:28.693850+00:00"
+    },
+    {
+      "address": "0xSAFE0010",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 8.99,
+        "dangerous_functions": 10.0,
+        "dev_history": 7.19,
+        "contract_age": 10.0,
+        "social_authenticity": 9.38,
+        "volume_liq_ratio": 7.5
+      },
+      "timestamp": "2026-03-26T03:34:28.694690+00:00"
+    },
+    {
+      "address": "0xSAFE0011",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.65,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.27,
+        "contract_age": 10.0,
+        "social_authenticity": 9.72,
+        "volume_liq_ratio": 9.17
+      },
+      "timestamp": "2026-03-26T03:34:28.696448+00:00"
+    },
+    {
+      "address": "0xSAFE0012",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 9.67,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.44,
+        "dangerous_functions": 6.67,
+        "dev_history": 9.63,
+        "contract_age": 6.06,
+        "social_authenticity": 9.13,
+        "volume_liq_ratio": 8.92
+      },
+      "timestamp": "2026-03-26T03:34:28.697911+00:00"
+    },
+    {
+      "address": "0xSAFE0013",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 9.15,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.22,
+        "dangerous_functions": 6.67,
+        "dev_history": 8.18,
+        "contract_age": 10.0,
+        "social_authenticity": 8.6,
+        "volume_liq_ratio": 8.63
+      },
+      "timestamp": "2026-03-26T03:34:28.698982+00:00"
+    },
+    {
+      "address": "0xSAFE0014",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.56,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.66,
+        "contract_age": 10.0,
+        "social_authenticity": 7.82,
+        "volume_liq_ratio": 7.99
+      },
+      "timestamp": "2026-03-26T03:34:28.700997+00:00"
+    },
+    {
+      "address": "0xSAFE0015",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.89,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.87,
+        "contract_age": 10.0,
+        "social_authenticity": 9.46,
+        "volume_liq_ratio": 7.76
+      },
+      "timestamp": "2026-03-26T03:34:28.702040+00:00"
+    },
+    {
+      "address": "0xSAFE0016",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 9.47,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 9.25,
+        "dangerous_functions": 6.67,
+        "dev_history": 8.59,
+        "contract_age": 10.0,
+        "social_authenticity": 9.39,
+        "volume_liq_ratio": 8.56
+      },
+      "timestamp": "2026-03-26T03:34:28.703861+00:00"
+    },
+    {
+      "address": "0xSAFE0017",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.54,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.41,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.79,
+        "contract_age": 10.0,
+        "social_authenticity": 9.7,
+        "volume_liq_ratio": 8.4
+      },
+      "timestamp": "2026-03-26T03:34:28.707125+00:00"
+    },
+    {
+      "address": "0xSAFE0018",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.71,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 8.71,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.61,
+        "contract_age": 8.42,
+        "social_authenticity": 10.0,
+        "volume_liq_ratio": 9.14
+      },
+      "timestamp": "2026-03-26T03:34:28.709015+00:00"
+    },
+    {
+      "address": "0xSAFE0019",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 9.53,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.44,
+        "dangerous_functions": 10.0,
+        "dev_history": 9.52,
+        "contract_age": 10.0,
+        "social_authenticity": 10.0,
+        "volume_liq_ratio": 7.73
+      },
+      "timestamp": "2026-03-26T03:34:28.714961+00:00"
+    },
+    {
+      "address": "0xSAFE0020",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 7.89,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.89,
+        "dangerous_functions": 10.0,
+        "dev_history": 9.7,
+        "contract_age": 10.0,
+        "social_authenticity": 9.48,
+        "volume_liq_ratio": 9.48
+      },
+      "timestamp": "2026-03-26T03:34:28.717054+00:00"
+    },
+    {
+      "address": "0xSAFE0021",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.33,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.24,
+        "contract_age": 10.0,
+        "social_authenticity": 9.57,
+        "volume_liq_ratio": 9.33
+      },
+      "timestamp": "2026-03-26T03:34:28.720489+00:00"
+    },
+    {
+      "address": "0xSAFE0022",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 9.65,
+        "dangerous_functions": 10.0,
+        "dev_history": 7.7,
+        "contract_age": 10.0,
+        "social_authenticity": 9.76,
+        "volume_liq_ratio": 8.52
+      },
+      "timestamp": "2026-03-26T03:34:28.721961+00:00"
+    },
+    {
+      "address": "0xSAFE0023",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.67,
+        "dangerous_functions": 10.0,
+        "dev_history": 9.68,
+        "contract_age": 10.0,
+        "social_authenticity": 8.73,
+        "volume_liq_ratio": 7.99
+      },
+      "timestamp": "2026-03-26T03:34:28.725454+00:00"
+    },
+    {
+      "address": "0xSAFE0024",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.06,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.52,
+        "contract_age": 10.0,
+        "social_authenticity": 9.53,
+        "volume_liq_ratio": 10.0
+      },
+      "timestamp": "2026-03-26T03:34:28.729249+00:00"
+    },
+    {
+      "address": "0xSAFE0025",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 9.95,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 8.89,
+        "dangerous_functions": 10.0,
+        "dev_history": 9.45,
+        "contract_age": 6.06,
+        "social_authenticity": 9.65,
+        "volume_liq_ratio": 7.74
+      },
+      "timestamp": "2026-03-26T03:34:28.730914+00:00"
+    },
+    {
+      "address": "0xSAFE0026",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 9.63,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 7.22,
+        "dangerous_functions": 10.0,
+        "dev_history": 7.14,
+        "contract_age": 10.0,
+        "social_authenticity": 10.0,
+        "volume_liq_ratio": 8.68
+      },
+      "timestamp": "2026-03-26T03:34:28.733309+00:00"
+    },
+    {
+      "address": "0xSAFE0027",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.84,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 8.48,
+        "dangerous_functions": 10.0,
+        "dev_history": 9.75,
+        "contract_age": 8.25,
+        "social_authenticity": 9.55,
+        "volume_liq_ratio": 9.12
+      },
+      "timestamp": "2026-03-26T03:34:28.735976+00:00"
+    },
+    {
+      "address": "0xSAFE0028",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.19,
+        "dangerous_functions": 6.67,
+        "dev_history": 8.12,
+        "contract_age": 6.06,
+        "social_authenticity": 10.0,
+        "volume_liq_ratio": 8.94
+      },
+      "timestamp": "2026-03-26T03:34:28.738512+00:00"
+    },
+    {
+      "address": "0xSAFE0029",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 8.98,
+        "dangerous_functions": 10.0,
+        "dev_history": 10.0,
+        "contract_age": 10.0,
+        "social_authenticity": 9.61,
+        "volume_liq_ratio": 9.9
+      },
+      "timestamp": "2026-03-26T03:34:28.741358+00:00"
+    },
+    {
+      "address": "0xSAFE0030",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 7.78,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.6,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.78,
+        "contract_age": 10.0,
+        "social_authenticity": 9.7,
+        "volume_liq_ratio": 7.76
+      },
+      "timestamp": "2026-03-26T03:34:28.743379+00:00"
+    },
+    {
+      "address": "0xSAFE0031",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.64,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.55,
+        "dangerous_functions": 10.0,
+        "dev_history": 7.5,
+        "contract_age": 10.0,
+        "social_authenticity": 9.0,
+        "volume_liq_ratio": 9.19
+      },
+      "timestamp": "2026-03-26T03:34:28.746416+00:00"
+    },
+    {
+      "address": "0xSAFE0032",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 9.89,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.34,
+        "dangerous_functions": 10.0,
+        "dev_history": 9.18,
+        "contract_age": 10.0,
+        "social_authenticity": 9.63,
+        "volume_liq_ratio": 7.32
+      },
+      "timestamp": "2026-03-26T03:34:28.748442+00:00"
+    },
+    {
+      "address": "0xSAFE0033",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 9.78,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.61,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.98,
+        "contract_age": 10.0,
+        "social_authenticity": 9.36,
+        "volume_liq_ratio": 9.35
+      },
+      "timestamp": "2026-03-26T03:34:28.751706+00:00"
+    },
+    {
+      "address": "0xSAFE0034",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 8.39,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.96,
+        "contract_age": 10.0,
+        "social_authenticity": 9.5,
+        "volume_liq_ratio": 9.43
+      },
+      "timestamp": "2026-03-26T03:34:28.753786+00:00"
+    },
+    {
+      "address": "0xSAFE0035",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.09,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 9.78,
+        "dangerous_functions": 6.67,
+        "dev_history": 10.0,
+        "contract_age": 10.0,
+        "social_authenticity": 9.29,
+        "volume_liq_ratio": 8.1
+      },
+      "timestamp": "2026-03-26T03:34:28.757120+00:00"
+    },
+    {
+      "address": "0xSAFE0036",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 9.12,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.89,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.28,
+        "contract_age": 10.0,
+        "social_authenticity": 9.41,
+        "volume_liq_ratio": 9.17
+      },
+      "timestamp": "2026-03-26T03:34:28.760546+00:00"
+    },
+    {
+      "address": "0xSAFE0037",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.3,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 7.95,
+        "dangerous_functions": 10.0,
+        "dev_history": 10.0,
+        "contract_age": 10.0,
+        "social_authenticity": 9.63,
+        "volume_liq_ratio": 7.79
+      },
+      "timestamp": "2026-03-26T03:34:28.765963+00:00"
+    },
+    {
+      "address": "0xSAFE0038",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 7.36,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.52,
+        "dangerous_functions": 10.0,
+        "dev_history": 10.0,
+        "contract_age": 10.0,
+        "social_authenticity": 9.28,
+        "volume_liq_ratio": 9.11
+      },
+      "timestamp": "2026-03-26T03:34:28.768297+00:00"
+    },
+    {
+      "address": "0xSAFE0039",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 9.08,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.09,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.83,
+        "contract_age": 10.0,
+        "social_authenticity": 8.93,
+        "volume_liq_ratio": 9.25
+      },
+      "timestamp": "2026-03-26T03:34:28.773321+00:00"
+    },
+    {
+      "address": "0xSAFE0040",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.59,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.27,
+        "contract_age": 10.0,
+        "social_authenticity": 9.46,
+        "volume_liq_ratio": 9.32
+      },
+      "timestamp": "2026-03-26T03:34:28.785818+00:00"
+    },
+    {
+      "address": "0xSAFE0041",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 8.82,
+        "dangerous_functions": 10.0,
+        "dev_history": 9.06,
+        "contract_age": 10.0,
+        "social_authenticity": 5.72,
+        "volume_liq_ratio": 7.23
+      },
+      "timestamp": "2026-03-26T03:34:28.788119+00:00"
+    },
+    {
+      "address": "0xSAFE0042",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 7.67,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 8.82,
+        "dangerous_functions": 6.67,
+        "dev_history": 8.54,
+        "contract_age": 10.0,
+        "social_authenticity": 9.33,
+        "volume_liq_ratio": 8.83
+      },
+      "timestamp": "2026-03-26T03:34:28.791635+00:00"
+    },
+    {
+      "address": "0xSAFE0043",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 7.08,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 8.32,
+        "dangerous_functions": 10.0,
+        "dev_history": 9.69,
+        "contract_age": 10.0,
+        "social_authenticity": 8.72,
+        "volume_liq_ratio": 9.46
+      },
+      "timestamp": "2026-03-26T03:34:28.795278+00:00"
+    },
+    {
+      "address": "0xSAFE0044",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.82,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.57,
+        "dangerous_functions": 6.67,
+        "dev_history": 9.28,
+        "contract_age": 10.0,
+        "social_authenticity": 8.9,
+        "volume_liq_ratio": 7.34
+      },
+      "timestamp": "2026-03-26T03:34:28.804145+00:00"
+    },
+    {
+      "address": "0xSAFE0045",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 4.74,
+        "dangerous_functions": 10.0,
+        "dev_history": 10.0,
+        "contract_age": 10.0,
+        "social_authenticity": 8.8,
+        "volume_liq_ratio": 7.88
+      },
+      "timestamp": "2026-03-26T03:34:28.808154+00:00"
+    },
+    {
+      "address": "0xSAFE0046",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.12,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.3,
+        "dangerous_functions": 10.0,
+        "dev_history": 9.22,
+        "contract_age": 10.0,
+        "social_authenticity": 9.59,
+        "volume_liq_ratio": 8.15
+      },
+      "timestamp": "2026-03-26T03:34:28.810613+00:00"
+    },
+    {
+      "address": "0xSAFE0047",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.51,
+        "dangerous_functions": 6.67,
+        "dev_history": 8.14,
+        "contract_age": 10.0,
+        "social_authenticity": 9.0,
+        "volume_liq_ratio": 8.0
+      },
+      "timestamp": "2026-03-26T03:34:28.813323+00:00"
+    },
+    {
+      "address": "0xSAFE0048",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.45,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 8.87,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.48,
+        "contract_age": 10.0,
+        "social_authenticity": 9.19,
+        "volume_liq_ratio": 9.36
+      },
+      "timestamp": "2026-03-26T03:34:28.816002+00:00"
+    },
+    {
+      "address": "0xSAFE0049",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.81,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.76,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.58,
+        "contract_age": 10.0,
+        "social_authenticity": 9.18,
+        "volume_liq_ratio": 7.63
+      },
+      "timestamp": "2026-03-26T03:34:28.818575+00:00"
+    },
+    {
+      "address": "0xSAFE0050",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.89,
+        "dangerous_functions": 10.0,
+        "dev_history": 9.72,
+        "contract_age": 10.0,
+        "social_authenticity": 9.16,
+        "volume_liq_ratio": 9.57
+      },
+      "timestamp": "2026-03-26T03:34:28.824310+00:00"
+    },
+    {
+      "address": "0xSAFE0051",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 9.97,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.19,
+        "dangerous_functions": 10.0,
+        "dev_history": 10.0,
+        "contract_age": 10.0,
+        "social_authenticity": 9.79,
+        "volume_liq_ratio": 8.52
+      },
+      "timestamp": "2026-03-26T03:34:28.828942+00:00"
+    },
+    {
+      "address": "0xSAFE0052",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.31,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 7.34,
+        "dangerous_functions": 10.0,
+        "dev_history": 10.0,
+        "contract_age": 6.06,
+        "social_authenticity": 9.64,
+        "volume_liq_ratio": 9.47
+      },
+      "timestamp": "2026-03-26T03:34:28.840295+00:00"
+    },
+    {
+      "address": "0xSAFE0053",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.18,
+        "dangerous_functions": 10.0,
+        "dev_history": 10.0,
+        "contract_age": 10.0,
+        "social_authenticity": 9.13,
+        "volume_liq_ratio": 7.15
+      },
+      "timestamp": "2026-03-26T03:34:28.843296+00:00"
+    },
+    {
+      "address": "0xSAFE0054",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.08,
+        "dangerous_functions": 6.67,
+        "dev_history": 10.0,
+        "contract_age": 10.0,
+        "social_authenticity": 9.54,
+        "volume_liq_ratio": 8.65
+      },
+      "timestamp": "2026-03-26T03:34:28.846200+00:00"
+    },
+    {
+      "address": "0xSAFE0055",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 7.23,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 8.98,
+        "dangerous_functions": 10.0,
+        "dev_history": 10.0,
+        "contract_age": 9.9,
+        "social_authenticity": 9.58,
+        "volume_liq_ratio": 8.16
+      },
+      "timestamp": "2026-03-26T03:34:28.852223+00:00"
+    },
+    {
+      "address": "0xSAFE0056",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.88,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.31,
+        "dangerous_functions": 10.0,
+        "dev_history": 9.64,
+        "contract_age": 10.0,
+        "social_authenticity": 9.45,
+        "volume_liq_ratio": 9.37
+      },
+      "timestamp": "2026-03-26T03:34:28.855339+00:00"
+    },
+    {
+      "address": "0xSAFE0057",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.32,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 5.8,
+        "dangerous_functions": 10.0,
+        "dev_history": 7.86,
+        "contract_age": 10.0,
+        "social_authenticity": 8.96,
+        "volume_liq_ratio": 7.26
+      },
+      "timestamp": "2026-03-26T03:34:28.858319+00:00"
+    },
+    {
+      "address": "0xSAFE0058",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 9.92,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 8.49,
+        "dangerous_functions": 10.0,
+        "dev_history": 7.6,
+        "contract_age": 10.0,
+        "social_authenticity": 8.74,
+        "volume_liq_ratio": 7.7
+      },
+      "timestamp": "2026-03-26T03:34:28.864473+00:00"
+    },
+    {
+      "address": "0xSAFE0059",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 7.69,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 8.17,
+        "dangerous_functions": 6.67,
+        "dev_history": 9.97,
+        "contract_age": 10.0,
+        "social_authenticity": 9.98,
+        "volume_liq_ratio": 8.52
+      },
+      "timestamp": "2026-03-26T03:34:28.867578+00:00"
+    },
+    {
+      "address": "0xSAFE0060",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.73,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.28,
+        "contract_age": 10.0,
+        "social_authenticity": 9.08,
+        "volume_liq_ratio": 8.07
+      },
+      "timestamp": "2026-03-26T03:34:28.872326+00:00"
+    },
+    {
+      "address": "0xSAFE0061",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 7.69,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 7.57,
+        "dangerous_functions": 10.0,
+        "dev_history": 9.19,
+        "contract_age": 8.87,
+        "social_authenticity": 9.52,
+        "volume_liq_ratio": 8.12
+      },
+      "timestamp": "2026-03-26T03:34:28.878761+00:00"
+    },
+    {
+      "address": "0xSAFE0062",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 9.72,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.45,
+        "dangerous_functions": 10.0,
+        "dev_history": 10.0,
+        "contract_age": 10.0,
+        "social_authenticity": 9.7,
+        "volume_liq_ratio": 8.31
+      },
+      "timestamp": "2026-03-26T03:34:28.883562+00:00"
+    },
+    {
+      "address": "0xSAFE0063",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 9.73,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 7.33,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.59,
+        "contract_age": 10.0,
+        "social_authenticity": 9.16,
+        "volume_liq_ratio": 9.09
+      },
+      "timestamp": "2026-03-26T03:34:28.891850+00:00"
+    },
+    {
+      "address": "0xSAFE0064",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 7.73,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.41,
+        "dangerous_functions": 10.0,
+        "dev_history": 10.0,
+        "contract_age": 10.0,
+        "social_authenticity": 10.0,
+        "volume_liq_ratio": 8.56
+      },
+      "timestamp": "2026-03-26T03:34:28.895197+00:00"
+    },
+    {
+      "address": "0xSAFE0065",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 9.47,
+        "dangerous_functions": 10.0,
+        "dev_history": 7.65,
+        "contract_age": 10.0,
+        "social_authenticity": 8.69,
+        "volume_liq_ratio": 7.55
+      },
+      "timestamp": "2026-03-26T03:34:28.898609+00:00"
+    },
+    {
+      "address": "0xSAFE0066",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.89,
+        "dangerous_functions": 10.0,
+        "dev_history": 9.93,
+        "contract_age": 10.0,
+        "social_authenticity": 8.96,
+        "volume_liq_ratio": 8.31
+      },
+      "timestamp": "2026-03-26T03:34:28.907885+00:00"
+    },
+    {
+      "address": "0xSAFE0067",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.68,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 9.52,
+        "dangerous_functions": 10.0,
+        "dev_history": 9.41,
+        "contract_age": 10.0,
+        "social_authenticity": 9.39,
+        "volume_liq_ratio": 8.22
+      },
+      "timestamp": "2026-03-26T03:34:28.914584+00:00"
+    },
+    {
+      "address": "0xSAFE0068",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.74,
+        "dangerous_functions": 10.0,
+        "dev_history": 6.0,
+        "contract_age": 6.06,
+        "social_authenticity": 9.45,
+        "volume_liq_ratio": 8.27
+      },
+      "timestamp": "2026-03-26T03:34:28.925170+00:00"
+    },
+    {
+      "address": "0xSAFE0069",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 9.48,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.65,
+        "contract_age": 10.0,
+        "social_authenticity": 9.73,
+        "volume_liq_ratio": 9.9
+      },
+      "timestamp": "2026-03-26T03:34:28.930783+00:00"
+    },
+    {
+      "address": "0xSAFE0070",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.66,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.32,
+        "dangerous_functions": 10.0,
+        "dev_history": 7.97,
+        "contract_age": 10.0,
+        "social_authenticity": 9.67,
+        "volume_liq_ratio": 9.83
+      },
+      "timestamp": "2026-03-26T03:34:28.934475+00:00"
+    },
+    {
+      "address": "0xSAFE0071",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 7.67,
+        "dangerous_functions": 10.0,
+        "dev_history": 9.13,
+        "contract_age": 10.0,
+        "social_authenticity": 9.85,
+        "volume_liq_ratio": 9.62
+      },
+      "timestamp": "2026-03-26T03:34:28.945390+00:00"
+    },
+    {
+      "address": "0xSAFE0072",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 7.91,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 9.51,
+        "dangerous_functions": 10.0,
+        "dev_history": 9.71,
+        "contract_age": 10.0,
+        "social_authenticity": 8.7,
+        "volume_liq_ratio": 8.95
+      },
+      "timestamp": "2026-03-26T03:34:28.951094+00:00"
+    },
+    {
+      "address": "0xSAFE0073",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.78,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.39,
+        "dangerous_functions": 6.67,
+        "dev_history": 9.51,
+        "contract_age": 6.06,
+        "social_authenticity": 9.61,
+        "volume_liq_ratio": 8.24
+      },
+      "timestamp": "2026-03-26T03:34:28.960167+00:00"
+    },
+    {
+      "address": "0xSAFE0074",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 9.93,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 8.92,
+        "dangerous_functions": 10.0,
+        "dev_history": 7.77,
+        "contract_age": 10.0,
+        "social_authenticity": 9.46,
+        "volume_liq_ratio": 7.71
+      },
+      "timestamp": "2026-03-26T03:34:28.972204+00:00"
+    },
+    {
+      "address": "0xSAFE0075",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 7.57,
+        "dangerous_functions": 10.0,
+        "dev_history": 9.1,
+        "contract_age": 10.0,
+        "social_authenticity": 9.48,
+        "volume_liq_ratio": 9.05
+      },
+      "timestamp": "2026-03-26T03:34:28.987126+00:00"
+    },
+    {
+      "address": "0xSAFE0076",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.42,
+        "dangerous_functions": 6.67,
+        "dev_history": 8.01,
+        "contract_age": 10.0,
+        "social_authenticity": 9.13,
+        "volume_liq_ratio": 9.49
+      },
+      "timestamp": "2026-03-26T03:34:28.993400+00:00"
+    },
+    {
+      "address": "0xSAFE0077",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 9.39,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 9.32,
+        "dangerous_functions": 10.0,
+        "dev_history": 9.99,
+        "contract_age": 10.0,
+        "social_authenticity": 9.18,
+        "volume_liq_ratio": 7.28
+      },
+      "timestamp": "2026-03-26T03:34:28.999208+00:00"
+    },
+    {
+      "address": "0xSAFE0078",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 8.89,
+        "dangerous_functions": 10.0,
+        "dev_history": 10.0,
+        "contract_age": 10.0,
+        "social_authenticity": 9.38,
+        "volume_liq_ratio": 8.14
+      },
+      "timestamp": "2026-03-26T03:34:29.006701+00:00"
+    },
+    {
+      "address": "0xSAFE0079",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 9.68,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.47,
+        "contract_age": 6.06,
+        "social_authenticity": 9.55,
+        "volume_liq_ratio": 9.9
+      },
+      "timestamp": "2026-03-26T03:34:29.011413+00:00"
+    },
+    {
+      "address": "0xSAFE0080",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 8.83,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 7.66,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.82,
+        "contract_age": 10.0,
+        "social_authenticity": 7.97,
+        "volume_liq_ratio": 8.86
+      },
+      "timestamp": "2026-03-26T03:34:29.017574+00:00"
+    },
+    {
+      "address": "0xSAFE0081",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 7.93,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.75,
+        "contract_age": 10.0,
+        "social_authenticity": 8.58,
+        "volume_liq_ratio": 8.71
+      },
+      "timestamp": "2026-03-26T03:34:29.025806+00:00"
+    },
+    {
+      "address": "0xSAFE0082",
+      "outcome": "safe",
+      "signal_scores": {
+        "liquidity_lock": 10.0,
+        "ownership_renounced": 10.0,
+        "wallet_concentration": 8.76,
+        "dangerous_functions": 10.0,
+        "dev_history": 8.6,
+        "contract_age": 10.0,
+        "social_authenticity": 9.56,
+        "volume_liq_ratio": 7.79
+      },
+      "timestamp": "2026-03-26T03:34:29.039747+00:00"
+    }
+  ],
+  "weight_log": [
+    {
+      "timestamp": "2026-03-26T03:34:28.684230+00:00",
+      "event": "SAFE 0xSAFE0000\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.05,
+        "ownership_renounced": 0.05,
+        "wallet_concentration": 0.05,
+        "dangerous_functions": 0.05,
+        "dev_history": 0.05,
+        "contract_age": 0.05,
+        "social_authenticity": 0.05,
+        "volume_liq_ratio": 0.05
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.685216+00:00",
+      "event": "SAFE 0xSAFE0001\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0525,
+        "ownership_renounced": 0.0525,
+        "wallet_concentration": 0.0525,
+        "dangerous_functions": 0.0525,
+        "dev_history": 0.0525,
+        "contract_age": 0.0525,
+        "social_authenticity": 0.0525,
+        "volume_liq_ratio": 0.0525
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.685913+00:00",
+      "event": "SAFE 0xSAFE0002\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0551,
+        "ownership_renounced": 0.0551,
+        "wallet_concentration": 0.0551,
+        "dangerous_functions": 0.0551,
+        "dev_history": 0.0551,
+        "contract_age": 0.0551,
+        "social_authenticity": 0.0551,
+        "volume_liq_ratio": 0.0551
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.686687+00:00",
+      "event": "SAFE 0xSAFE0003\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0579,
+        "ownership_renounced": 0.0579,
+        "wallet_concentration": 0.0579,
+        "dangerous_functions": 0.0579,
+        "dev_history": 0.0579,
+        "contract_age": 0.0579,
+        "social_authenticity": 0.0579,
+        "volume_liq_ratio": 0.0579
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.687418+00:00",
+      "event": "SAFE 0xSAFE0004\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0608,
+        "ownership_renounced": 0.0608,
+        "wallet_concentration": 0.0608,
+        "dangerous_functions": 0.0608,
+        "dev_history": 0.0608,
+        "contract_age": 0.0608,
+        "social_authenticity": 0.0608,
+        "volume_liq_ratio": 0.0608
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.688390+00:00",
+      "event": "SAFE 0xSAFE0005\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0638,
+        "ownership_renounced": 0.0638,
+        "wallet_concentration": 0.0638,
+        "dangerous_functions": 0.0638,
+        "dev_history": 0.0638,
+        "contract_age": 0.0638,
+        "social_authenticity": 0.0638,
+        "volume_liq_ratio": 0.0638
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.688986+00:00",
+      "event": "SAFE 0xSAFE0006\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.067,
+        "ownership_renounced": 0.067,
+        "wallet_concentration": 0.067,
+        "dangerous_functions": 0.067,
+        "dev_history": 0.067,
+        "contract_age": 0.067,
+        "social_authenticity": 0.067,
+        "volume_liq_ratio": 0.067
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.690198+00:00",
+      "event": "SAFE 0xSAFE0007\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0704,
+        "wallet_concentration": 0.0704,
+        "dangerous_functions": 0.0704,
+        "dev_history": 0.0704,
+        "contract_age": 0.0704,
+        "social_authenticity": 0.0704,
+        "volume_liq_ratio": 0.0704
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.692280+00:00",
+      "event": "SAFE 0xSAFE0008\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0739,
+        "ownership_renounced": 0.0704,
+        "wallet_concentration": 0.0739,
+        "dangerous_functions": 0.0739,
+        "dev_history": 0.0739,
+        "contract_age": 0.0739,
+        "social_authenticity": 0.0739,
+        "volume_liq_ratio": 0.0739
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.693860+00:00",
+      "event": "SAFE 0xSAFE0009\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0776,
+        "wallet_concentration": 0.0776,
+        "dangerous_functions": 0.0776,
+        "dev_history": 0.0776,
+        "contract_age": 0.0776,
+        "social_authenticity": 0.0776,
+        "volume_liq_ratio": 0.0776
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.694701+00:00",
+      "event": "SAFE 0xSAFE0010\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0815,
+        "wallet_concentration": 0.0815,
+        "dangerous_functions": 0.0815,
+        "dev_history": 0.0815,
+        "contract_age": 0.0815,
+        "social_authenticity": 0.0815,
+        "volume_liq_ratio": 0.0815
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.696458+00:00",
+      "event": "SAFE 0xSAFE0011\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0855,
+        "ownership_renounced": 0.0739,
+        "wallet_concentration": 0.0855,
+        "dangerous_functions": 0.0855,
+        "dev_history": 0.0855,
+        "contract_age": 0.0855,
+        "social_authenticity": 0.0855,
+        "volume_liq_ratio": 0.0855
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.697922+00:00",
+      "event": "SAFE 0xSAFE0012\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0898,
+        "ownership_renounced": 0.0776,
+        "wallet_concentration": 0.0898,
+        "dangerous_functions": 0.0898,
+        "dev_history": 0.0898,
+        "contract_age": 0.0898,
+        "social_authenticity": 0.0898,
+        "volume_liq_ratio": 0.0898
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.698995+00:00",
+      "event": "SAFE 0xSAFE0013\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0943,
+        "ownership_renounced": 0.0815,
+        "wallet_concentration": 0.0943,
+        "dangerous_functions": 0.0943,
+        "dev_history": 0.0943,
+        "contract_age": 0.0943,
+        "social_authenticity": 0.0943,
+        "volume_liq_ratio": 0.0943
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.701009+00:00",
+      "event": "SAFE 0xSAFE0014\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.099,
+        "ownership_renounced": 0.0855,
+        "wallet_concentration": 0.099,
+        "dangerous_functions": 0.099,
+        "dev_history": 0.099,
+        "contract_age": 0.099,
+        "social_authenticity": 0.099,
+        "volume_liq_ratio": 0.099
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.702050+00:00",
+      "event": "SAFE 0xSAFE0015\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.104,
+        "ownership_renounced": 0.0898,
+        "wallet_concentration": 0.104,
+        "dangerous_functions": 0.104,
+        "dev_history": 0.104,
+        "contract_age": 0.104,
+        "social_authenticity": 0.104,
+        "volume_liq_ratio": 0.104
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.703872+00:00",
+      "event": "SAFE 0xSAFE0016\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.1092,
+        "wallet_concentration": 0.1092,
+        "dangerous_functions": 0.1092,
+        "dev_history": 0.1092,
+        "contract_age": 0.1092,
+        "social_authenticity": 0.1092,
+        "volume_liq_ratio": 0.1092
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.707138+00:00",
+      "event": "SAFE 0xSAFE0017\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.1146,
+        "ownership_renounced": 0.0943,
+        "wallet_concentration": 0.1146,
+        "dangerous_functions": 0.1146,
+        "dev_history": 0.1146,
+        "contract_age": 0.1146,
+        "social_authenticity": 0.1146,
+        "volume_liq_ratio": 0.1146
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.709027+00:00",
+      "event": "SAFE 0xSAFE0018\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.1203,
+        "ownership_renounced": 0.099,
+        "wallet_concentration": 0.1203,
+        "dangerous_functions": 0.1203,
+        "dev_history": 0.1203,
+        "contract_age": 0.1203,
+        "social_authenticity": 0.1203,
+        "volume_liq_ratio": 0.1203
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.714973+00:00",
+      "event": "SAFE 0xSAFE0019\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.1264,
+        "ownership_renounced": 0.104,
+        "wallet_concentration": 0.1264,
+        "dangerous_functions": 0.1264,
+        "dev_history": 0.1264,
+        "contract_age": 0.1264,
+        "social_authenticity": 0.1264,
+        "volume_liq_ratio": 0.1264
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.717065+00:00",
+      "event": "SAFE 0xSAFE0020\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.1327,
+        "ownership_renounced": 0.1092,
+        "wallet_concentration": 0.1327,
+        "dangerous_functions": 0.1327,
+        "dev_history": 0.1327,
+        "contract_age": 0.1327,
+        "social_authenticity": 0.1327,
+        "volume_liq_ratio": 0.1327
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.720502+00:00",
+      "event": "SAFE 0xSAFE0021\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.1393,
+        "ownership_renounced": 0.1146,
+        "wallet_concentration": 0.1393,
+        "dangerous_functions": 0.1393,
+        "dev_history": 0.1393,
+        "contract_age": 0.1393,
+        "social_authenticity": 0.1393,
+        "volume_liq_ratio": 0.1393
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.721971+00:00",
+      "event": "SAFE 0xSAFE0022\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.1463,
+        "wallet_concentration": 0.1463,
+        "dangerous_functions": 0.1463,
+        "dev_history": 0.1463,
+        "contract_age": 0.1463,
+        "social_authenticity": 0.1463,
+        "volume_liq_ratio": 0.1463
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.725470+00:00",
+      "event": "SAFE 0xSAFE0023\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.1536,
+        "ownership_renounced": 0.1203,
+        "wallet_concentration": 0.1536,
+        "dangerous_functions": 0.1536,
+        "dev_history": 0.1536,
+        "contract_age": 0.1536,
+        "social_authenticity": 0.1536,
+        "volume_liq_ratio": 0.1536
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.729261+00:00",
+      "event": "SAFE 0xSAFE0024\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.1613,
+        "ownership_renounced": 0.1264,
+        "wallet_concentration": 0.1613,
+        "dangerous_functions": 0.1613,
+        "dev_history": 0.1613,
+        "contract_age": 0.1613,
+        "social_authenticity": 0.1613,
+        "volume_liq_ratio": 0.1613
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.730924+00:00",
+      "event": "SAFE 0xSAFE0025\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.1693,
+        "wallet_concentration": 0.1693,
+        "dangerous_functions": 0.1693,
+        "dev_history": 0.1693,
+        "contract_age": 0.1693,
+        "social_authenticity": 0.1693,
+        "volume_liq_ratio": 0.1693
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.733319+00:00",
+      "event": "SAFE 0xSAFE0026\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.1778,
+        "ownership_renounced": 0.1327,
+        "wallet_concentration": 0.1778,
+        "dangerous_functions": 0.1778,
+        "dev_history": 0.1778,
+        "contract_age": 0.1778,
+        "social_authenticity": 0.1778,
+        "volume_liq_ratio": 0.1778
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.735987+00:00",
+      "event": "SAFE 0xSAFE0027\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.1867,
+        "ownership_renounced": 0.1393,
+        "wallet_concentration": 0.1867,
+        "dangerous_functions": 0.1867,
+        "dev_history": 0.1867,
+        "contract_age": 0.1867,
+        "social_authenticity": 0.1867,
+        "volume_liq_ratio": 0.1867
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.738523+00:00",
+      "event": "SAFE 0xSAFE0028\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.196,
+        "ownership_renounced": 0.1463,
+        "wallet_concentration": 0.196,
+        "dangerous_functions": 0.196,
+        "dev_history": 0.196,
+        "contract_age": 0.196,
+        "social_authenticity": 0.196,
+        "volume_liq_ratio": 0.196
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.741369+00:00",
+      "event": "SAFE 0xSAFE0029\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.2058,
+        "ownership_renounced": 0.1536,
+        "wallet_concentration": 0.2058,
+        "dangerous_functions": 0.2058,
+        "dev_history": 0.2058,
+        "contract_age": 0.2058,
+        "social_authenticity": 0.2058,
+        "volume_liq_ratio": 0.2058
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.743390+00:00",
+      "event": "SAFE 0xSAFE0030\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.2161,
+        "ownership_renounced": 0.1613,
+        "wallet_concentration": 0.2161,
+        "dangerous_functions": 0.2161,
+        "dev_history": 0.2161,
+        "contract_age": 0.2161,
+        "social_authenticity": 0.2161,
+        "volume_liq_ratio": 0.2161
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.746426+00:00",
+      "event": "SAFE 0xSAFE0031\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.2269,
+        "ownership_renounced": 0.1693,
+        "wallet_concentration": 0.2269,
+        "dangerous_functions": 0.2269,
+        "dev_history": 0.2269,
+        "contract_age": 0.2269,
+        "social_authenticity": 0.2269,
+        "volume_liq_ratio": 0.2269
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.748454+00:00",
+      "event": "SAFE 0xSAFE0032\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.2383,
+        "ownership_renounced": 0.1778,
+        "wallet_concentration": 0.2383,
+        "dangerous_functions": 0.2383,
+        "dev_history": 0.2383,
+        "contract_age": 0.2383,
+        "social_authenticity": 0.2383,
+        "volume_liq_ratio": 0.2383
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.751718+00:00",
+      "event": "SAFE 0xSAFE0033\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.2502,
+        "ownership_renounced": 0.1867,
+        "wallet_concentration": 0.2502,
+        "dangerous_functions": 0.2502,
+        "dev_history": 0.2502,
+        "contract_age": 0.2502,
+        "social_authenticity": 0.2502,
+        "volume_liq_ratio": 0.2502
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.753797+00:00",
+      "event": "SAFE 0xSAFE0034\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.2627,
+        "ownership_renounced": 0.196,
+        "wallet_concentration": 0.2627,
+        "dangerous_functions": 0.2627,
+        "dev_history": 0.2627,
+        "contract_age": 0.2627,
+        "social_authenticity": 0.2627,
+        "volume_liq_ratio": 0.2627
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.757131+00:00",
+      "event": "SAFE 0xSAFE0035\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.2758,
+        "wallet_concentration": 0.2758,
+        "dangerous_functions": 0.2758,
+        "dev_history": 0.2758,
+        "contract_age": 0.2758,
+        "social_authenticity": 0.2758,
+        "volume_liq_ratio": 0.2758
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.760558+00:00",
+      "event": "SAFE 0xSAFE0036\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.2896,
+        "ownership_renounced": 0.2058,
+        "wallet_concentration": 0.2896,
+        "dangerous_functions": 0.2896,
+        "dev_history": 0.2896,
+        "contract_age": 0.2896,
+        "social_authenticity": 0.2896,
+        "volume_liq_ratio": 0.2896
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.765975+00:00",
+      "event": "SAFE 0xSAFE0037\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.3041,
+        "ownership_renounced": 0.2161,
+        "wallet_concentration": 0.3041,
+        "dangerous_functions": 0.3041,
+        "dev_history": 0.3041,
+        "contract_age": 0.3041,
+        "social_authenticity": 0.3041,
+        "volume_liq_ratio": 0.3041
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.768308+00:00",
+      "event": "SAFE 0xSAFE0038\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.3193,
+        "ownership_renounced": 0.2269,
+        "wallet_concentration": 0.3193,
+        "dangerous_functions": 0.3193,
+        "dev_history": 0.3193,
+        "contract_age": 0.3193,
+        "social_authenticity": 0.3193,
+        "volume_liq_ratio": 0.3193
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.773333+00:00",
+      "event": "SAFE 0xSAFE0039\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.3353,
+        "ownership_renounced": 0.2383,
+        "wallet_concentration": 0.3353,
+        "dangerous_functions": 0.3353,
+        "dev_history": 0.3353,
+        "contract_age": 0.3353,
+        "social_authenticity": 0.3353,
+        "volume_liq_ratio": 0.3353
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.785830+00:00",
+      "event": "SAFE 0xSAFE0040\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.352,
+        "ownership_renounced": 0.2502,
+        "wallet_concentration": 0.352,
+        "dangerous_functions": 0.352,
+        "dev_history": 0.352,
+        "contract_age": 0.352,
+        "social_authenticity": 0.352,
+        "volume_liq_ratio": 0.352
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.788131+00:00",
+      "event": "SAFE 0xSAFE0041\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.3696,
+        "ownership_renounced": 0.2627,
+        "wallet_concentration": 0.3696,
+        "dangerous_functions": 0.3696,
+        "dev_history": 0.3696,
+        "contract_age": 0.3696,
+        "social_authenticity": 0.3696,
+        "volume_liq_ratio": 0.3696
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.791664+00:00",
+      "event": "SAFE 0xSAFE0042\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.3881,
+        "ownership_renounced": 0.2758,
+        "wallet_concentration": 0.3881,
+        "dangerous_functions": 0.3881,
+        "dev_history": 0.3881,
+        "contract_age": 0.3881,
+        "social_authenticity": 0.3881,
+        "volume_liq_ratio": 0.3881
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.795290+00:00",
+      "event": "SAFE 0xSAFE0043\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.4075,
+        "ownership_renounced": 0.2896,
+        "wallet_concentration": 0.4075,
+        "dangerous_functions": 0.4075,
+        "dev_history": 0.4075,
+        "contract_age": 0.4075,
+        "social_authenticity": 0.4075,
+        "volume_liq_ratio": 0.4075
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.804157+00:00",
+      "event": "SAFE 0xSAFE0044\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.4279,
+        "ownership_renounced": 0.3041,
+        "wallet_concentration": 0.4279,
+        "dangerous_functions": 0.4279,
+        "dev_history": 0.4279,
+        "contract_age": 0.4279,
+        "social_authenticity": 0.4279,
+        "volume_liq_ratio": 0.4279
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.808167+00:00",
+      "event": "SAFE 0xSAFE0045\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.4493,
+        "ownership_renounced": 0.3193,
+        "dangerous_functions": 0.4493,
+        "dev_history": 0.4493,
+        "contract_age": 0.4493,
+        "social_authenticity": 0.4493,
+        "volume_liq_ratio": 0.4493
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.810624+00:00",
+      "event": "SAFE 0xSAFE0046\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.4718,
+        "ownership_renounced": 0.3353,
+        "wallet_concentration": 0.4493,
+        "dangerous_functions": 0.4718,
+        "dev_history": 0.4718,
+        "contract_age": 0.4718,
+        "social_authenticity": 0.4718,
+        "volume_liq_ratio": 0.4718
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.813335+00:00",
+      "event": "SAFE 0xSAFE0047\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0931,
+        "ownership_renounced": 0.352,
+        "wallet_concentration": 0.4718,
+        "dangerous_functions": 0.0931,
+        "dev_history": 0.0931,
+        "contract_age": 0.0931,
+        "social_authenticity": 0.0931,
+        "volume_liq_ratio": 0.0931
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.816014+00:00",
+      "event": "SAFE 0xSAFE0048\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.3696,
+        "wallet_concentration": 0.0931,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.818585+00:00",
+      "event": "SAFE 0xSAFE0049\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.3881,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.824322+00:00",
+      "event": "SAFE 0xSAFE0050\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.4075,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.828956+00:00",
+      "event": "SAFE 0xSAFE0051\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.4279,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.840307+00:00",
+      "event": "SAFE 0xSAFE0052\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.4493,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.843309+00:00",
+      "event": "SAFE 0xSAFE0053\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.4718,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.846210+00:00",
+      "event": "SAFE 0xSAFE0054\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0931,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.852235+00:00",
+      "event": "SAFE 0xSAFE0055\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.855350+00:00",
+      "event": "SAFE 0xSAFE0056\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.858329+00:00",
+      "event": "SAFE 0xSAFE0057\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.864483+00:00",
+      "event": "SAFE 0xSAFE0058\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.867589+00:00",
+      "event": "SAFE 0xSAFE0059\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.872337+00:00",
+      "event": "SAFE 0xSAFE0060\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.878772+00:00",
+      "event": "SAFE 0xSAFE0061\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.883572+00:00",
+      "event": "SAFE 0xSAFE0062\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.891862+00:00",
+      "event": "SAFE 0xSAFE0063\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.895208+00:00",
+      "event": "SAFE 0xSAFE0064\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.898619+00:00",
+      "event": "SAFE 0xSAFE0065\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.907900+00:00",
+      "event": "SAFE 0xSAFE0066\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.914604+00:00",
+      "event": "SAFE 0xSAFE0067\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.925183+00:00",
+      "event": "SAFE 0xSAFE0068\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.930795+00:00",
+      "event": "SAFE 0xSAFE0069\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.934487+00:00",
+      "event": "SAFE 0xSAFE0070\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.945403+00:00",
+      "event": "SAFE 0xSAFE0071\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.951107+00:00",
+      "event": "SAFE 0xSAFE0072\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.960184+00:00",
+      "event": "SAFE 0xSAFE0073\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.972218+00:00",
+      "event": "SAFE 0xSAFE0074\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.987139+00:00",
+      "event": "SAFE 0xSAFE0075\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.993430+00:00",
+      "event": "SAFE 0xSAFE0076\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:28.999302+00:00",
+      "event": "SAFE 0xSAFE0077\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:29.006755+00:00",
+      "event": "SAFE 0xSAFE0078\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:29.011428+00:00",
+      "event": "SAFE 0xSAFE0079\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:29.017590+00:00",
+      "event": "SAFE 0xSAFE0080\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:29.025825+00:00",
+      "event": "SAFE 0xSAFE0081\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    },
+    {
+      "timestamp": "2026-03-26T03:34:29.039794+00:00",
+      "event": "SAFE 0xSAFE0082\u2026  \u2192  reinforce",
+      "adjustments": {
+        "liquidity_lock": 0.0,
+        "ownership_renounced": 0.0,
+        "wallet_concentration": 0.0,
+        "dangerous_functions": 0.0,
+        "dev_history": 0.0,
+        "contract_age": 0.0,
+        "social_authenticity": 0.0,
+        "volume_liq_ratio": 0.0
+      }
+    }
+  ],
+  "total_analyzed": 200,
+  "total_rugged": 0,
+  "total_safe": 83,
+  "total_blocked": 117
+}
