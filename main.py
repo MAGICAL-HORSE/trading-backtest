@@ -497,12 +497,10 @@ def _simulate_fill(option_ticker: str, quantity: int, price: float):
 # ── Shutdown handler ──────────────────────────────────────────────────────────
 
 def _install_signal_handlers(bot: TradingBot) -> None:
-    loop = asyncio.get_event_loop()
-
     def _shutdown(signum, frame):  # type: ignore
         log.warning("shutdown_signal", extra={"signal": signum})
         bot._running = False
-        loop.call_soon_threadsafe(bot._state.__setattr__, "status", "STOPPING")
+        bot._state.status = "STOPPING"
 
     signal.signal(signal.SIGINT, _shutdown)
     signal.signal(signal.SIGTERM, _shutdown)
