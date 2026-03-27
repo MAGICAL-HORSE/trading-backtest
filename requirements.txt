@@ -1,0 +1,29 @@
+# ── Core async / HTTP ────────────────────────────────────────
+aiohttp>=3.9.3
+aiofiles>=23.2.1
+
+# ── Broker & Market Data ─────────────────────────────────────
+polygon-api-client>=1.14.0      # Polygon.io REST + WebSocket
+yfinance>=0.2.40                # Fundamentals / market cap fallback
+requests>=2.31.0                # Tradier REST (sync wrapper)
+
+# ── Data / Quant ─────────────────────────────────────────────
+pandas>=2.2.1
+numpy>=1.26.4
+pandas-market-calendars>=4.4.0  # NYSE trading calendar
+ta>=0.11.0                      # Technical indicators (RSI, ATR, VWAP)
+
+# ── Config & Environment ─────────────────────────────────────
+pyyaml>=6.0.1
+python-dotenv>=1.0.1
+
+# ── Terminal Dashboard ───────────────────────────────────────
+rich>=13.7.1
+
+# ── Logging ──────────────────────────────────────────────────
+python-json-logger>=2.0.7
+
+# ── Utilities ────────────────────────────────────────────────
+tenacity>=8.2.3                 # Retry logic for order repricing
+pytz>=2024.1                    # Timezone handling
+click>=8.1.7                    # CLI entry-point flags
