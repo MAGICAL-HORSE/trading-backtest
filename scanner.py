@@ -113,18 +113,44 @@ class UniverseBuilder:
         # handles fresh additions via GICS code filtering.
         STATIC_SEEDS: dict[str, list[str]] = {
             "XBI": [
+                # Large/mid cap biotech
                 "MRNA", "BNTX", "REGN", "VRTX", "BIIB", "GILD", "ALNY",
                 "SRPT", "RARE", "ACAD", "BMRN", "INCY", "FOLD", "MDGL",
                 "ARWR", "KROS", "RCUS", "FATE", "BEAM", "CRSP", "EDIT",
                 "NTLA", "VERV", "IONS", "NBIX", "PRAX", "TGTX", "DNLI",
                 "PTGX", "SRRK", "YMAB", "AVXL", "SGEN", "PCVX", "DVAX",
                 "APLS", "ARDX", "HALO", "NKTR", "PTCT",
+                # Additional high-volume biotech movers
+                "ABBV", "BMY", "LLY", "PFE", "AMGN", "ISRG", "ILMN",
+                "EXAS", "NKTR", "BGNE", "ZLAB", "LEGN", "KYMR", "XNCR",
+                "IMVT", "RVMD", "VKTX", "RXRX", "ROIV", "GRFS", "INSM",
+                "AGEN", "ACHR", "HOOK", "IOVA", "MGNX", "MRUS", "NUVL",
+                "OCGN", "ORGO", "PGEN", "RLAY", "RUBY", "SAGE", "SLNO",
+                "SPRY", "STOK", "SVRA", "TBPH", "TPVG", "TRVN", "TVTX",
+                "TWST", "URGN", "VERA", "VMAR", "VNDA", "VNET", "VRAY",
+                "VRCA", "VRTX", "VSTM", "VTAK", "VTRS", "VVOS", "VYGR",
+                "ALDX", "ABUS", "ACRS", "ADMA", "ADPT", "ADTX", "AGIO",
+                "AGTC", "AHCO", "AIXI", "AKBA", "AKRO", "AKTS", "ALBO",
+                "ALEC", "ALGS", "ALKT", "ALLO", "ALNY", "ALPN", "ALRN",
+                "ALTO", "ALVO", "ALVR", "ALXO", "AMRX", "AMSC", "AMTI",
             ],
             "XLE": [
+                # Large cap energy
                 "XOM", "CVX", "COP", "EOG", "SLB", "PXD", "MPC", "VLO",
                 "PSX", "HAL", "DVN", "HES", "FANG", "OXY", "APA", "SM",
                 "RRC", "AR", "CIVI", "CLR", "CNX", "GPOR", "CRC", "ERF",
                 "NOG", "MTDR", "CHRD", "ESTE", "PHX", "REI",
+                # Additional energy movers
+                "BP", "SHEL", "TTE", "ENB", "TRP", "ET", "EPD", "KMI",
+                "WMB", "OKE", "LNG", "CQP", "CTRA", "MRO", "PDCE", "DEN",
+                "TALO", "KOS", "VTLE", "SWN", "EQT", "CHK", "WTI", "NEXT",
+                "FLNC", "PLUG", "FCEL", "HYLN", "NKLA", "BE", "BLDP",
+                "CEI", "TELL", "GXII", "AMPY", "BATL", "BNXG", "BORR",
+                "CLMT", "DINO", "FLNG", "GATO", "GETR", "GTLS", "HESM",
+                "HPKW", "IMPP", "INDO", "IREN", "JRSH", "KGEI", "KNOP",
+                "MNRL", "MPLX", "MUSA", "NGL", "NR", "NRDS", "NRGU",
+                "NRGV", "NRP", "NRT", "NTIC", "NTOG", "NTR", "NVEI",
+                "OBSV", "OGN", "OGS", "OII", "OIS", "OLLI", "OMAB",
             ],
         }
         tickers = STATIC_SEEDS.get(etf, [])
