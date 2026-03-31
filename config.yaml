@@ -9,9 +9,9 @@ scanner:
   top_n: 5                       # Keep top-N stocks per scan cycle
   price_min: 2.00
   price_max: 50.00
-  market_cap_max: 2_000_000_000  # $2 billion
-  volume_spike_multiplier: 2.5   # Current vol > 2.5× 20-day avg
-  min_intraday_move_pct: 3.0     # ±3% intraday move required
+  market_cap_max: 10_000_000_000 # $10 billion (loosened from $2B)
+  volume_spike_multiplier: 1.5   # Current vol > 1.5× 20-day avg (loosened)
+  min_intraday_move_pct: 1.5     # ±1.5% intraday move required (loosened)
   volume_lookback_days: 20       # Days for avg volume baseline
   sectors:
     biotech:
@@ -23,9 +23,9 @@ scanner:
 
 # ── Options Liquidity Requirements ───────────────────────────
 options:
-  min_open_interest: 500
-  max_spread_entry: 0.20         # Hard skip if spread > $0.20 at entry
-  max_spread_scan: 0.15          # Soft filter during scan
+  min_open_interest: 100         # Lowered from 500 (loosened)
+  max_spread_entry: 0.50         # Hard skip if spread > $0.50 at entry (loosened)
+  max_spread_scan: 0.40          # Soft filter during scan (loosened)
   min_expirations: 2             # At least 2 expiry dates available
   require_weekly: true
   min_dte: 2                     # Never buy < 1 DTE on small caps (guard)
