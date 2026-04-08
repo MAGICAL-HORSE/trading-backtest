@@ -36,6 +36,9 @@ import click
 
 from broker import TradierBroker
 from dashboard import Dashboard, DashboardState, PositionRow, ScanRow
+from flow import FlowScanner
+from intelligence import IntelligenceEngine, TradeRecord
+from market_regime import MarketRegimeEngine
 from news import NewsClient
 from risk import RiskManager
 from scanner import ScanResult, Scanner
@@ -77,11 +80,16 @@ class TradingBot:
         self._risk = RiskManager()
         self._risk.account_capital = account_capital
 
+        # Smart modules — loaded once, persist across scan cycles
+        self._intelligence = IntelligenceEngine()
+
         # Running flag — set False by shutdown handler
         self._running = False
 
         # Track the Tradier order IDs → position IDs for reconciliation
         self._order_to_position: dict[str, str] = {}
+        # Track entry data for intelligence recording on exit
+        self._entry_records: dict[str, dict] = {}
 
     # ── Entry point ───────────────────────────────────────────────────────────
 
@@ -107,6 +115,8 @@ class TradingBot:
                 StrategyEngine(POLYGON_KEY) as strategy,
                 NewsClient(BENZINGA_KEY) as news,
                 TradierBroker(TRADIER_KEY, TRADIER_ACCOUNT) as broker,
+                FlowScanner(POLYGON_KEY) as flow_scanner,
+                MarketRegimeEngine(POLYGON_KEY) as regime_engine,
                 aiohttp.ClientSession(
                     headers={"Authorization": f"Bearer {POLYGON_KEY}"},
                     timeout=aiohttp.ClientTimeout(total=10),
@@ -116,6 +126,8 @@ class TradingBot:
                 self._polygon_session = _polygon_session
                 self._news = news
                 self._strategy = strategy
+                self._flow_scanner = flow_scanner
+                self._regime_engine = regime_engine
 
                 self._risk.reset_daily()
 
@@ -208,8 +220,22 @@ class TradingBot:
             if row.ticker in catalyst_map:
                 row.has_catalyst = catalyst_map[row.ticker]
 
-        # Get USO direction once for all energy stocks
-        uso_dir = await get_uso_direction(self._polygon_session, POLYGON_KEY)
+        # Get USO direction, market regime, and flow data concurrently
+        uso_dir, market_context = await asyncio.gather(
+            get_uso_direction(self._polygon_session, POLYGON_KEY),
+            self._regime_engine.get_context(),
+        )
+
+        # Scan options flow for all candidates in parallel
+        flow_inputs = [(r.ticker, r.price) for r in scan_results]
+        flow_map = await self._flow_scanner.scan_batch(flow_inputs)
+
+        # Log market regime on dashboard
+        self._state.log_entry(
+            "SCAN", "MARKET",
+            f"regime={market_context.regime} spy={market_context.spy_change_pct:+.1f}% "
+            f"vix={market_context.vix_level:.1f} bias={market_context.trade_bias}"
+        )
 
         # Skip new entries if bot is halted
         if self._risk.is_halted:
@@ -223,12 +249,16 @@ class TradingBot:
 
             has_catalyst = catalyst_map.get(scan.ticker, False)
             uso_direction = uso_dir if scan.sector == "energy" else 0
+            flow_signal = flow_map.get(scan.ticker)
 
             try:
                 signal = await strategy.evaluate(
                     scan,
                     has_catalyst=has_catalyst,
                     uso_direction=uso_direction,
+                    flow_signal=flow_signal,
+                    market_context=market_context,
+                    intelligence=self._intelligence,
                 )
             except Exception as exc:
                 log.error(
@@ -332,6 +362,25 @@ class TradingBot:
         self._risk.add_position(position)
         self._order_to_position[order_result.order_id] = position_id
         self._state.trades_today += 1
+
+        # Store entry data for intelligence recording when trade closes
+        self._entry_records[position_id] = {
+            "ticker": signal.scan_result.ticker,
+            "sector": signal.scan_result.sector,
+            "direction": signal.direction,
+            "entry_time": now_et().isoformat(),
+            "entry_hour_et": now_et().hour,
+            "confidence": signal.confidence,
+            "rsi": signal.rsi_5m,
+            "atr_expansion": signal.atr_expansion,
+            "vwap_break_pct": signal.vwap_break_pct,
+            "volume_spike": signal.volume_spike,
+            "had_catalyst": has_catalyst if hasattr(signal, '_has_catalyst') else False,
+            "had_flow": bool(flow_signal and flow_signal.flow_score > 20) if 'flow_signal' in dir() else False,
+            "market_regime": market_context.regime if 'market_context' in dir() and market_context else "UNKNOWN",
+            "vix": market_context.vix_level if 'market_context' in dir() and market_context else 0.0,
+            "entry_premium": fill_price,
+        }
 
         # Add to dashboard positions
         self._state.positions.append(
@@ -440,8 +489,7 @@ class TradingBot:
 
         self._risk.remove_position(position_id, realized_pnl)
 
-        # Remove from dashboard (match by ticker; _sync_dashboard_positions
-        # handles further reconciliation each monitor tick)
+        # Remove from dashboard
         self._state.positions = [
             p for p in self._state.positions
             if p.ticker != pos.ticker
@@ -453,6 +501,34 @@ class TradingBot:
             f"{reason} @ ${exit_price:.2f} ({'+' if pnl_pct >= 0 else ''}{pnl_pct:.1f}%)",
             pnl=realized_pnl,
         )
+
+        # ── Teach the intelligence engine what happened ───────────────────────
+        entry_data = self._entry_records.pop(position_id, None)
+        if entry_data:
+            import uuid as _uuid
+            record = TradeRecord(
+                trade_id=str(_uuid.uuid4()),
+                ticker=entry_data["ticker"],
+                sector=entry_data["sector"],
+                direction=entry_data["direction"],
+                entry_time=entry_data["entry_time"],
+                exit_time=now_et().isoformat(),
+                entry_hour_et=entry_data["entry_hour_et"],
+                confidence_at_entry=entry_data["confidence"],
+                rsi_at_entry=entry_data["rsi"],
+                atr_expansion_at_entry=entry_data["atr_expansion"],
+                vwap_break_pct=entry_data["vwap_break_pct"],
+                volume_spike=entry_data["volume_spike"],
+                had_catalyst=entry_data["had_catalyst"],
+                had_flow_signal=entry_data["had_flow"],
+                market_regime=entry_data["market_regime"],
+                vix_at_entry=entry_data["vix"],
+                exit_reason=reason,
+                pnl_pct=pnl_pct,
+                winner=pnl_pct > 0,
+                big_winner=pnl_pct >= 50,
+            )
+            self._intelligence.record_trade(record)
 
     async def _close_all_positions(self, reason: str) -> None:
         """Emergency / EOD: close all open positions at market."""
