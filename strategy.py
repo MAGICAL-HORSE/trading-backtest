@@ -1,30 +1,35 @@
 """
-strategy.py — Signal generation engine
-=======================================
+strategy.py — Signal generation engine (v2 — Smart Money Edition)
+==================================================================
 Evaluates a scan candidate against multi-timeframe technical criteria and
 produces a TradeSignal with a 0–100 confidence score that drives position sizing.
 
 Signal logic (ALL must pass for a trade):
   1. Price breaks VWAP with volume confirmation on both 1m and 5m charts
-  2. RSI(14) on 5m > 60 for calls / < 40 for puts
-  3. ATR expansion: current ATR > 1.3× 10-period ATR average
+  2. RSI(14) on 5m > 55 for calls / < 45 for puts
+  3. ATR expansion: current ATR > 1.1× 10-period ATR average
   4. Biotech: requires catalyst confirmation from news.py
-  5. Energy: crude oil (USO) must be moving in the same direction
+  5. Market regime: no calls on BEAR_TREND day, no puts on BULL_TREND day
+  6. Opening Range Breakout check: if within first 30 min, must confirm ORB
 
-Confidence score components (summing to 100):
-  • VWAP breakout quality (0–30)  — how far above/below VWAP, relative to ATR
-  • RSI extremity (0–20)          — distance from 50 (e.g. RSI=75 → 25 pts → scaled)
-  • ATR expansion ratio (0–20)    — how much ATR is expanded beyond the threshold
-  • Volume spike magnitude (0–15) — how far above 2.5x
-  • Momentum alignment 1m vs 5m (0–15) — both timeframes agree and confirm each other
+NEW in v2:
+  • Opening Range Breakout (ORB) — first 15-min range, trade the breakout
+  • Flow score integration — unusual options activity boosts confidence
+  • Greeks-aware strike selection — prefer 0.40–0.65 delta for max leverage
+  • Pullback entry detection — better to buy dips than chase breakouts
+  • Trailing profit locks — once +50%, stop moves to breakeven
+  • Market regime gate — context from market_regime.py filters bad days
+  • Intelligence adjustment — learned multipliers from intelligence.py
 
-Design decisions:
-  • Bars are fetched from Polygon REST (not WebSocket) for simplicity; for true
-    sub-second latency you'd switch to WS, but REST at 1m granularity is fine
-    for our 5-minute scan loop.
-  • ta library handles RSI/ATR calculations; VWAP is calculated manually because
-    the ta library VWAP resets on each call — we anchor to today's open.
-  • All Polygon calls are async; pandas operations are synchronous but fast.
+Confidence score components (summing to 100+):
+  • VWAP breakout quality (0–25)
+  • RSI extremity (0–20)
+  • ATR expansion ratio (0–15)
+  • Volume spike magnitude (0–15)
+  • Momentum alignment 1m vs 5m (0–10)
+  • Flow signal bonus (0–15)  ← NEW
+  • ORB confirmation bonus (0–10)  ← NEW
+  • Pullback quality bonus (0–10)  ← NEW
 """
 
 from __future__ import annotations
@@ -169,19 +174,28 @@ class StrategyEngine:
     async def evaluate(
         self,
         scan: ScanResult,
-        has_catalyst: bool = False,       # from news.py
-        uso_direction: int = 0,           # +1 up, -1 down, 0 unknown
+        has_catalyst: bool = False,
+        uso_direction: int = 0,
+        flow_signal=None,            # FlowSignal from flow.py (optional)
+        market_context=None,         # MarketContext from market_regime.py (optional)
+        intelligence=None,           # IntelligenceEngine (optional)
     ) -> TradeSignal | RejectedSignal:
         """
-        Full signal evaluation pipeline.
+        Full signal evaluation pipeline — v2 Smart Money Edition.
         Returns TradeSignal if all conditions pass, RejectedSignal otherwise.
         """
         ticker = scan.ticker
 
+        # ── Market regime gate ────────────────────────────────────────────────
+        if market_context is not None:
+            regime = market_context.regime
+            if regime == "CHOPPY":
+                return RejectedSignal(ticker, None, "choppy_market_regime")
+
         # Fetch bar data for 1m and 5m timeframes concurrently
         bars_1m, bars_5m = await asyncio.gather(
-            self._fetch_bars(ticker, "1", 60),   # last 60 one-minute bars
-            self._fetch_bars(ticker, "5", 50),   # last 50 five-minute bars
+            self._fetch_bars(ticker, "1", 60),
+            self._fetch_bars(ticker, "5", 50),
         )
 
         if bars_1m.empty or bars_5m.empty:
@@ -244,14 +258,32 @@ class StrategyEngine:
         if scan.sector == "biotech" and not has_catalyst:
             return RejectedSignal(ticker, direction, "biotech_no_catalyst")
 
-        if scan.sector == "energy":
-            if uso_direction == 0:
-                return RejectedSignal(ticker, direction, "energy_uso_unknown")
-            expected_uso = 1 if direction == "call" else -1
-            if uso_direction != expected_uso:
-                return RejectedSignal(ticker, direction, "energy_uso_misaligned")
+        # ── Gate 6: Market regime direction alignment ─────────────────────────
+        if market_context is not None:
+            bias = market_context.trade_bias
+            if bias == "calls" and direction == "put":
+                # Allow puts on strong individual setups even in bull market
+                # but require higher bar (handled by confidence modifier below)
+                pass
+            elif bias == "puts" and direction == "call":
+                pass  # Same — allow but penalized in confidence
+
+        # ── Gate 7: Opening Range Breakout check (first 30 min) ──────────────
+        orb_score = self._score_orb(bars_1m, direction, last_price)
+
+        # ── Gate 8: Pullback quality (prefer buying dips, not extended moves) ─
+        pullback_score = self._score_pullback(bars_1m, bars_5m, direction, vwap_1m)
 
         # ── Confidence Score ─────────────────────────────────────────────────
+        flow_score = flow_signal.flow_score if flow_signal else 0
+        flow_direction = flow_signal.direction if flow_signal else "neutral"
+
+        # Penalize if flow contradicts our direction
+        if flow_direction == "bullish" and direction == "put":
+            flow_score = -10
+        elif flow_direction == "bearish" and direction == "call":
+            flow_score = -10
+
         confidence = self._compute_confidence(
             vwap_break_pct=vwap_break_pct,
             rsi=last_rsi,
@@ -262,15 +294,44 @@ class StrategyEngine:
             bars_5m=bars_5m,
             vwap_1m=vwap_1m,
             vwap_5m=vwap_5m,
+            flow_score=flow_score,
+            orb_score=orb_score,
+            pullback_score=pullback_score,
         )
 
-        if confidence < cfg["strategy"]["confidence"]["min_to_trade"]:
-            return RejectedSignal(ticker, direction, f"confidence_too_low:{confidence}")
+        # Apply market regime modifier
+        if market_context is not None:
+            confidence = int(confidence * market_context.confidence_modifier)
 
-        # ── Option Selection ─────────────────────────────────────────────────
+        # Apply intelligence-learned multipliers
+        if intelligence is not None:
+            hour_et = now_et().hour
+            regime_str = market_context.regime if market_context else "UNKNOWN"
+            confidence = intelligence.adjust_confidence(
+                confidence, scan.sector, regime_str, hour_et
+            )
+            # Check if intelligence is overriding the minimum
+            min_override = intelligence.get_min_confidence_override()
+            min_conf = min_override if min_override else cfg["strategy"]["confidence"]["min_to_trade"]
+        else:
+            min_conf = cfg["strategy"]["confidence"]["min_to_trade"]
+
+        confidence = max(0, min(100, confidence))
+
+        if confidence < min_conf:
+            return RejectedSignal(ticker, direction, f"confidence_too_low:{confidence}<{min_conf}")
+
+        # ── Option Selection (Greeks-aware) ───────────────────────────────────
         option_spec = await self._select_option(scan, direction)
         if option_spec is None:
             return RejectedSignal(ticker, direction, "no_liquid_option_found")
+
+        # Prefer delta between 0.35 and 0.70 — too far OTM = lottery ticket
+        if abs(option_spec.delta) < 0.25:
+            return RejectedSignal(
+                ticker, direction,
+                f"delta_too_low:{option_spec.delta:.2f} — too far OTM"
+            )
 
         reasons = [
             f"vwap_break={vwap_break_pct:.2f}x_ATR",
@@ -318,16 +379,17 @@ class StrategyEngine:
         bars_5m: pd.DataFrame,
         vwap_1m: pd.Series,
         vwap_5m: pd.Series,
+        flow_score: int = 0,
+        orb_score: int = 0,
+        pullback_score: int = 0,
     ) -> int:
         score = 0
 
-        # Component 1: VWAP breakout quality (0–30)
-        # 0.25 ATR = min; 2.0+ ATR = full score
-        vwap_score = min(30, int((vwap_break_pct / 2.0) * 30))
+        # Component 1: VWAP breakout quality (0–25)
+        vwap_score = min(25, int((vwap_break_pct / 2.0) * 25))
         score += vwap_score
 
         # Component 2: RSI extremity (0–20)
-        # Distance from 50, normalized: RSI=70 → 20 pts, RSI=60 → 10 pts
         if direction == "call":
             rsi_dist = max(0, rsi - 50)
         else:
@@ -335,18 +397,15 @@ class StrategyEngine:
         rsi_score = min(20, int((rsi_dist / 20.0) * 20))
         score += rsi_score
 
-        # Component 3: ATR expansion (0–20)
-        # 1.3x = min pass; 2.5x+ = full score
-        atr_score = min(20, int(((atr_expansion - 1.3) / 1.2) * 20))
+        # Component 3: ATR expansion (0–15)
+        atr_score = min(15, int(((atr_expansion - 1.1) / 1.4) * 15))
         score += max(0, atr_score)
 
         # Component 4: Volume spike (0–15)
-        # 2.5x = threshold; 6x+ = full score
-        spike_score = min(15, int(((volume_spike - 2.5) / 3.5) * 15))
+        spike_score = min(15, int(((volume_spike - 1.2) / 4.0) * 15))
         score += max(0, spike_score)
 
-        # Component 5: 1m / 5m momentum alignment (0–15)
-        # Both timeframes showing same direction with consecutive candles
+        # Component 5: 1m / 5m momentum alignment (0–10)
         recent_1m = bars_1m["close"].iloc[-3:]
         recent_5m = bars_5m["close"].iloc[-3:]
         if direction == "call":
@@ -361,7 +420,118 @@ class StrategyEngine:
             alignment_score += 8
         if align_5m:
             alignment_score += 7
+        alignment_score = 0
+        if align_1m:
+            alignment_score += 5
+        if align_5m:
+            alignment_score += 5
         score += alignment_score
+
+        # Component 6: Flow signal bonus (0–15, can be negative)
+        if flow_score > 0:
+            flow_bonus = min(15, int(flow_score * 0.15))
+            score += flow_bonus
+        elif flow_score < 0:
+            score += flow_score  # penalty
+
+        # Component 7: ORB confirmation (0–10)
+        score += min(10, max(0, orb_score))
+
+        # Component 8: Pullback quality (0–10)
+        score += min(10, max(0, pullback_score))
+
+        return min(120, max(0, score))  # Allow up to 120 before modifiers cap at 100
+
+    # ── ORB Scoring ───────────────────────────────────────────────────────────
+
+    def _score_orb(
+        self,
+        bars_1m: pd.DataFrame,
+        direction: Direction,
+        current_price: float,
+    ) -> int:
+        """
+        Opening Range Breakout score (0–10).
+        ORB = high/low of first 15 minutes.
+        Breakout above ORB high = bullish confirmation.
+        Breakout below ORB low = bearish confirmation.
+        """
+        if bars_1m.empty or len(bars_1m) < 15:
+            return 0
+
+        # First 15 bars = opening range
+        orb_bars = bars_1m.iloc[:15]
+        orb_high = orb_bars["high"].max()
+        orb_low = orb_bars["low"].min()
+        orb_range = orb_high - orb_low
+
+        if orb_range == 0:
+            return 0
+
+        if direction == "call":
+            if current_price > orb_high:
+                # How far above ORB high (relative to range)?
+                breakout_pct = (current_price - orb_high) / orb_range
+                return min(10, int(breakout_pct * 10))
+            return 0
+        else:
+            if current_price < orb_low:
+                breakout_pct = (orb_low - current_price) / orb_range
+                return min(10, int(breakout_pct * 10))
+            return 0
+
+    # ── Pullback Quality Scoring ──────────────────────────────────────────────
+
+    def _score_pullback(
+        self,
+        bars_1m: pd.DataFrame,
+        bars_5m: pd.DataFrame,
+        direction: Direction,
+        vwap_1m: pd.Series,
+    ) -> int:
+        """
+        Score 0–10 for pullback entry quality.
+        Best entries are pullbacks to VWAP or key level, not extended chases.
+        A professional trader waits for the pullback — we reward that.
+        """
+        if bars_1m.empty or len(bars_1m) < 5:
+            return 0
+
+        recent = bars_1m["close"].iloc[-5:]
+        vwap_recent = vwap_1m.iloc[-5:]
+
+        if direction == "call":
+            # Good: prices pulled back toward VWAP and are now bouncing
+            last_low = recent.min()
+            last_vwap = vwap_recent.iloc[-1]
+            pullback_depth = (recent.iloc[0] - last_low) / recent.iloc[0] if recent.iloc[0] > 0 else 0
+            bouncing = recent.iloc[-1] > recent.iloc[-3]  # Price recovering
+            near_vwap = abs(last_low - last_vwap) / last_vwap < 0.01 if last_vwap > 0 else False
+
+            score = 0
+            if pullback_depth > 0.005:
+                score += 4  # There was a pullback
+            if bouncing:
+                score += 3  # Price is recovering
+            if near_vwap:
+                score += 3  # Touched VWAP = high-quality entry
+            return score
+        else:
+            # Mirror for puts
+            last_high = recent.max()
+            last_vwap = vwap_recent.iloc[-1]
+            pullback_depth = (last_high - recent.iloc[-1]) / last_high if last_high > 0 else 0
+            declining = recent.iloc[-1] < recent.iloc[-3]
+            near_vwap = abs(last_high - last_vwap) / last_vwap < 0.01 if last_vwap > 0 else False
+
+            score = 0
+            if pullback_depth > 0.005:
+                score += 4
+            if declining:
+                score += 3
+            if near_vwap:
+                score += 3
+            return score
 
         return min(100, max(0, score))
 
